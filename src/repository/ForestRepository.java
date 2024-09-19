@@ -61,7 +61,6 @@ public class ForestRepository {
                 Forest forest = new Forest();
                 forest.setId(rs.getString("id"));
                 forest.setName(rs.getString("name"));
-//                forest.setTrees(new TreeRepository().findByForestId(forest.getId()));
                 forests.add(forest);
             }
         } catch (Exception e) {

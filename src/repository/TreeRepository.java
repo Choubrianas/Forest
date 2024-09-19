@@ -70,11 +70,6 @@ public class TreeRepository {
                 Tree tree = new Tree();
                 tree.setId(rs.getString("id"));
                 tree.setType(rs.getString("type"));
-//                Optional<Forest> forestOptional = new ForestRepository().findById(rs.getString("forest_id"));
-//                forestOptional.ifPresentOrElse(
-//                        tree::setForest,
-//                        () -> System.out.println("Forest not found")
-//                );
                 tree.setForest(forest);
                 trees.add(tree);
             }
