@@ -42,6 +42,19 @@ public class Main {
         trees.forEach(tree -> tree.setType(TreeTypes.get(ThreadLocalRandom.current().nextInt(TreeTypes.size()))));
         trees.forEach(System.out::println);
 
+        // link each tree with a random forest
+        /*for (int i = 0; i < trees.size()/2; i++) {
+            trees.get(i).setForest(forests.get(0));
+        }
+        for (int i = trees.size()/2; i < trees.size(); i++) {
+            trees.get(i).setForest(forests.get(1));
+        }*/
+        // OR
+        trees.forEach(
+                tree -> {
+                    tree.setForest(forests.get(ThreadLocalRandom.current().nextInt(forests.size())));
+                }
+        );
 
         // Call services here !
         ForestService forestService = new ForestService();

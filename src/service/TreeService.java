@@ -1,5 +1,6 @@
 package service;
 
+import model.Forest;
 import model.Tree;
 import repository.TreeRepository;
 
@@ -21,5 +22,9 @@ public class TreeService {
                 return false;
         }
         return true;
+    }
+
+    public List<Tree> findTreesByForestId(Forest forest) {
+        return treeRepository.findByForestId(forest);
     }
 }
